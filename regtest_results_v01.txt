@@ -1,0 +1,38 @@
+PASS model: Chronicle-dialect covenant (hash type 0x61, guarded reversal, version 2) carries a^k b^k c^k on aabbcc to acceptance | 12 transactions
+PASS translation changes only OP_SUBSTR/OP_LEFT/OP_RIGHT and preserves every push | 2316 operations, 139 remapped
+PASS node is bitcoin-sv 1.2.3 on regtest | /Bitcoin SV:1.2.3/
+PASS node refuses a^k b^k c^k n=6 on a non-member | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines a^k b^k c^k n=6 on a member | script 8594 bytes, T=23, spend bd4f2651a7627f422b64c6fc39c1fa20ecfb8ffccfdd0611b29f1f4c0c9f0f13
+PASS node refuses a^k b^k c^k n=9 on a non-member | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines a^k b^k c^k n=9 on a member | script 17179 bytes, T=46, spend a302ba9453723b649a527069e2ee7530516d0c8bbd309b276c64ed1f7187564b
+PASS node accepts and mines 0^(2^k) n=64 on a member | script 159234 bytes, T=833, spend fdb4abbd0985c1893864e47ef6e1030b7636ee39ea81ae149abfe86531c76483
+PASS node refuses 0^(2^k) n=48 on a non-member | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node refuses A(2,3) claimed as 10 | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines A(2,3)=9 (44 iterations) | script 1284 bytes, spend bdde1e5ac126a75e85bc7e4be1f15ebc8c59b61255c4a27962727636e48458ff
+PASS node refuses A(3,3) claimed as 62 | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines A(3,3)=61 (2432 iterations) | script 70536 bytes, spend a145ddd5b6dec5196c7e7e3f8949b892932ead40e0d4cf51bbcda478b20a106d
+PASS node refuses A(3,4) claimed as 126 | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines A(3,4)=125 (10307 iterations) | script 298911 bytes, spend a346e39e4ec15a528d12f54fd76eb4ce75fa1851cf806c8008cea9b4ebfaa205
+PASS covenant a^k b^k c^k on aabbcc: node refuses a successor with the wrong machine state | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses a successor with one tape cell altered | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses a second output | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses substituted code | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses a misstated transaction field | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses payout before acceptance | 16: mandatory-script-verify-flag-failed (Operation not valid with the current stack size)
+PASS covenant on aabbcc: 12 consecutive transactions accepted and mined by the node | 7d474672b88503ff97e500249bd08050f119a7e32d6c0c1dbd74b2d7564a4682
+PASS covenant on aabbcc: final on-chain state equals the reference machine's | A
+PASS covenant on aabbcc: node refuses payout signed by another key | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS covenant on aabbcc: beneficiary paid after acceptance, mined | 31b23492a2840884876b2cf5c7c3538146af2eb2a5cf4eaffcb87065ebf06c3b
+PASS covenant on aabbc: 7 consecutive transactions accepted and mined by the node | fd293645690028d3b0511c32d6fca60c4c2893c89edbdbf9ce4beee904e3021f
+PASS covenant on aabbc: final on-chain state equals the reference machine's | R
+PASS covenant on aabbc: node refuses payout after rejection | 16: mandatory-script-verify-flag-failed (Operation not valid with the current stack size)
+PASS covenant binary counter: node refuses a successor with the wrong machine state | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses a successor with one tape cell altered | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses a second output | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses substituted code | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses a misstated transaction field | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses payout before acceptance | 16: mandatory-script-verify-flag-failed (Operation not valid with the current stack size)
+PASS counter covenant: 60 consecutive transactions accepted and mined (240 machine steps) | b6caf64b9ac327249249cb0c7db78f2b72157123491a788903506a4a34248e8d
+PASS counter covenant: on-chain state equals the reference machine's
+
+failures: 0
