@@ -12,13 +12,14 @@ University of Exeter Business School
 
 The node is the official image `bitcoinsv/bitcoin-sv:1.2.3`, pinned by digest
 `sha256:d96fe4786a00e5fc10bc9e0e76a6006376f9472d4eb74d07e4c1e0d019493d33`, on regtest. Genesis
-and Chronicle are active from block 1, and mempool acceptance enforces main-net standardness
-(`acceptnonstdtxn=0`; configuration in `bitcoin.conf`). Every construction is placed in a
+and Chronicle are active from block 1. The experiments ran on a single BSV 1.2.3 regtest node
+with `acceptnonstdtxn=0`. The node accepted or refused transactions under the settings recorded
+in `bitcoin.conf`. Every construction is placed in a
 funded output and spent by a transaction submitted with `sendrawtransaction`. Every accepted
 spend is then mined in a block, and every test also submits a tampered spend that the node must
 refuse.
 
-**37 checks, 0 failures** (`regtest_results_v01.txt`, `regtest_results_v01.json`).
+**36 checks, 0 failures** (`regtest_results_v01.txt`, `regtest_results_v01.json`).
 
 ### Two-stack Turing machines — unchanged 0.1.5 scripts
 
@@ -85,7 +86,7 @@ Requires Docker and Python 3.8+.
 
 ```
 sh start_node.sh                 # pinned bitcoin-sv 1.2.3, regtest, RPC 127.0.0.1:18432
-python regtest_runs_v01.py       # 37 checks; writes regtest_results_v01.*
+python regtest_runs_v01.py       # 36 checks; writes regtest_results_v01.*
 ```
 
 The model and constructions (`script015_*`, `tx015_v01.py`, `secp256k1_v01.py`,
