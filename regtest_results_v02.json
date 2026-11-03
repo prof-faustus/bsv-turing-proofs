@@ -1,0 +1,418 @@
+{
+ "node": {
+  "subversion": "/Bitcoin SV:1.2.3/",
+  "version": 101020300,
+  "chain": "regtest"
+ },
+ "checks": [
+  {
+   "name": "model: Chronicle-dialect covenant (hash type 0x61, guarded reversal, version 2) carries a^k b^k c^k on aabbcc to acceptance",
+   "pass": true,
+   "detail": "12 transactions"
+  },
+  {
+   "name": "translation changes only OP_SUBSTR/OP_LEFT/OP_RIGHT and preserves every push",
+   "pass": true,
+   "detail": "2346 operations, 139 remapped"
+  },
+  {
+   "name": "node is bitcoin-sv 1.2.3 on regtest",
+   "pass": true,
+   "detail": "/Bitcoin SV:1.2.3/"
+  },
+  {
+   "name": "node refuses a^k b^k c^k n=6 on a non-member",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)"
+  },
+  {
+   "name": "node accepts and mines a^k b^k c^k n=6 on a member",
+   "pass": true,
+   "detail": "script 8594 bytes, T=23, spend 04bed941aa83f57c8d2fed3ae9104d979f02841b078120609f92bbf98b07c550"
+  },
+  {
+   "name": "node refuses a^k b^k c^k n=9 on a non-member",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)"
+  },
+  {
+   "name": "node accepts and mines a^k b^k c^k n=9 on a member",
+   "pass": true,
+   "detail": "script 17179 bytes, T=46, spend 34f3c79a7feed41923b4583f2ee1cfdcf20448b6cae3b9b7da253ed524f21545"
+  },
+  {
+   "name": "node accepts and mines 0^(2^k) n=64 on a member",
+   "pass": true,
+   "detail": "script 159234 bytes, T=833, spend 0d63679c128b561c599584408bae6324972a29e1ca966055466b71f6d16a2efb"
+  },
+  {
+   "name": "node refuses 0^(2^k) n=48 on a non-member",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)"
+  },
+  {
+   "name": "node refuses A(2,3) claimed as 10",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)"
+  },
+  {
+   "name": "node accepts and mines A(2,3)=9 (44 iterations)",
+   "pass": true,
+   "detail": "script 1284 bytes, spend 7c680f1112b6be9e845800a5b63fb9a4601cc6c143412d40c9836d7c5d3f3a06"
+  },
+  {
+   "name": "node refuses A(3,3) claimed as 62",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)"
+  },
+  {
+   "name": "node accepts and mines A(3,3)=61 (2432 iterations)",
+   "pass": true,
+   "detail": "script 70536 bytes, spend 65b6a337deae2df05e68b60d384891cf91219c93897f46974b9360cb589abea0"
+  },
+  {
+   "name": "node refuses A(3,4) claimed as 126",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)"
+  },
+  {
+   "name": "node accepts and mines A(3,4)=125 (10307 iterations)",
+   "pass": true,
+   "detail": "script 298911 bytes, spend 28d57bf37c6ba543495904c6d4c86b37567c2ec87e0c6ca9077d08d795c7d6b3"
+  },
+  {
+   "name": "covenant a^k b^k c^k on aabbcc: node refuses a successor with the wrong machine state",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant a^k b^k c^k on aabbcc: node refuses a successor with one tape cell altered",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant a^k b^k c^k on aabbcc: node refuses a second output",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant a^k b^k c^k on aabbcc: node refuses substituted code",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant a^k b^k c^k on aabbcc: node refuses a misstated transaction field",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant a^k b^k c^k on aabbcc: node refuses payout before acceptance",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Operation not valid with the current stack size)"
+  },
+  {
+   "name": "covenant a^k b^k c^k on aabbcc: node refuses a forged spend with a second output",
+   "pass": true,
+   "detail": "1 cuts, none with serialised widths; 16: mandatory-script-verify-flag-failed (Script failed an OP_EQUALVERIFY operation)"
+  },
+  {
+   "name": "covenant a^k b^k c^k on aabbcc: node refuses a forged spend with substituted code",
+   "pass": true,
+   "detail": "351 cuts, none with serialised widths; 16: mandatory-script-verify-flag-failed (Script failed an OP_EQUALVERIFY operation)"
+  },
+  {
+   "name": "covenant on aabbcc: 12 consecutive transactions accepted and mined by the node",
+   "pass": true,
+   "detail": "6ffc1cedc37b3ba1aa49cdf8810636661882ab592b4737b9c95919af383194d9"
+  },
+  {
+   "name": "covenant on aabbcc: final on-chain state equals the reference machine's",
+   "pass": true,
+   "detail": "A"
+  },
+  {
+   "name": "covenant on aabbcc: node refuses payout signed by another key",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)"
+  },
+  {
+   "name": "covenant on aabbcc: beneficiary paid after acceptance, mined",
+   "pass": true,
+   "detail": "e675abd6308b7deb65d01ee1787a8ef6815c357992b79ef2c15d4fea94b043ac"
+  },
+  {
+   "name": "covenant on aabbc: 7 consecutive transactions accepted and mined by the node",
+   "pass": true,
+   "detail": "7d6341c0c93d6bea602c648b6a30da5c0868a0819cbbd27bebd9130a7aafd4dd"
+  },
+  {
+   "name": "covenant on aabbc: final on-chain state equals the reference machine's",
+   "pass": true,
+   "detail": "R"
+  },
+  {
+   "name": "covenant on aabbc: node refuses payout after rejection",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Operation not valid with the current stack size)"
+  },
+  {
+   "name": "covenant_v01 (no field-width test): node accepts and mines a forged spend with a second output",
+   "pass": true,
+   "detail": "2 cuts; a999cee2e033af2b5f13e7e1cd51d8c3e3f521fe5e88d4188a0d3a4c257b1c5f"
+  },
+  {
+   "name": "covenant_v01 (no field-width test): node accepts and mines a forged spend with substituted code",
+   "pass": true,
+   "detail": "351 cuts; 5a91a2dd20cbb9cb9de27a8ca57eb56250968814302f75a326d56a591a81fa68"
+  },
+  {
+   "name": "covenant_v01: the hijacked successor is spent with an empty unlocking script",
+   "pass": true,
+   "detail": "5909227afa04706c1ceda82422641bdba4e17786bc9fb4d0a56927ab0ec1ac4d"
+  },
+  {
+   "name": "covenant binary counter: node refuses a successor with the wrong machine state",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant binary counter: node refuses a successor with one tape cell altered",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant binary counter: node refuses a second output",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant binary counter: node refuses substituted code",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant binary counter: node refuses a misstated transaction field",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)"
+  },
+  {
+   "name": "covenant binary counter: node refuses payout before acceptance",
+   "pass": true,
+   "detail": "16: mandatory-script-verify-flag-failed (Operation not valid with the current stack size)"
+  },
+  {
+   "name": "covenant binary counter: node refuses a forged spend with a second output",
+   "pass": true,
+   "detail": "2 cuts, none with serialised widths; 16: mandatory-script-verify-flag-failed (Script failed an OP_EQUALVERIFY operation)"
+  },
+  {
+   "name": "covenant binary counter: node refuses a forged spend with substituted code",
+   "pass": true,
+   "detail": "204 cuts, none with serialised widths; 16: mandatory-script-verify-flag-failed (Script failed an OP_EQUALVERIFY operation)"
+  },
+  {
+   "name": "counter covenant: 60 consecutive transactions accepted and mined (240 machine steps)",
+   "pass": true,
+   "detail": "d7c76bf2de36645bb20dd184efbadc13981d4711712befc145700135384807d4"
+  },
+  {
+   "name": "counter covenant: on-chain state equals the reference machine's",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "records": [
+  {
+   "kind": "turing",
+   "machine": "a^k b^k c^k",
+   "n": 6,
+   "T": 23,
+   "script_bytes": 8594,
+   "funding_txid": "a319f4fc994f506553bb56c5ebf3b246181ac5f822f106a867c168c581d32b0c",
+   "seconds": 0.3
+  },
+  {
+   "kind": "turing",
+   "machine": "a^k b^k c^k",
+   "n": 9,
+   "T": 46,
+   "script_bytes": 17179,
+   "funding_txid": "34e56d28da8d4f0c07e54a67940ae6e1ba9c60a406ee107499611169d28964de",
+   "seconds": 0.4
+  },
+  {
+   "kind": "turing",
+   "machine": "0^(2^k)",
+   "n": 64,
+   "T": 833,
+   "script_bytes": 159234,
+   "funding_txid": "9ec1fd7b9783b44615053ff40de66fd940596b76f47b66636734de44ef5f7e41",
+   "seconds": 0.5
+  },
+  {
+   "kind": "turing",
+   "machine": "0^(2^k)",
+   "n": 48,
+   "T": 433,
+   "script_bytes": 82802,
+   "funding_txid": "23cf8aad9a52085da02f1557a9d371d3d63b1fcfaaf1555259088702361978fb",
+   "seconds": 0.4
+  },
+  {
+   "kind": "ackermann",
+   "m": 2,
+   "n": 3,
+   "A": 9,
+   "iterations": 44,
+   "script_bytes": 1284,
+   "funding_txid": "a70c30838ca97b1058bb03bc33583d0e67a0f9e146f51efba38a36a83612109f",
+   "spend_txid": "7c680f1112b6be9e845800a5b63fb9a4601cc6c143412d40c9836d7c5d3f3a06"
+  },
+  {
+   "kind": "ackermann",
+   "m": 3,
+   "n": 3,
+   "A": 61,
+   "iterations": 2432,
+   "script_bytes": 70536,
+   "funding_txid": "894ddd3a256d0c7c2918bd951924089b4a48891c21aee55c66b310f1213b2840",
+   "spend_txid": "65b6a337deae2df05e68b60d384891cf91219c93897f46974b9360cb589abea0"
+  },
+  {
+   "kind": "ackermann",
+   "m": 3,
+   "n": 4,
+   "A": 125,
+   "iterations": 10307,
+   "script_bytes": 298911,
+   "funding_txid": "bbecd62f3ccac0eaf248a24c34c73bd132a0af655fb539f7d28ce2c3b79cb10f",
+   "spend_txid": "28d57bf37c6ba543495904c6d4c86b37567c2ec87e0c6ca9077d08d795c7d6b3"
+  },
+  {
+   "kind": "covenant",
+   "machine": "a^k b^k c^k",
+   "input": "aabbcc",
+   "k": 2,
+   "code_bytes": 2977,
+   "transactions": 12,
+   "final_state": "A",
+   "txids": [
+    "d87b10ec2efd152b0da9200bf51cb0816e7074ca3cbcc3fb956ceef8ba772637",
+    "b109981bdecf5a807a580693d11d3ae2ea23856a58187c04089b8b73b49c6857",
+    "b650f5aa6e92d428e2e6f80096179bc2b5a474b45d534f201f79e64034a83903",
+    "ec72eac51eb5c0f1537d4c83696ce1f1653b4fc0630cd7f5e59a833ec7caf623",
+    "e0bdadad6bc68d01c104dbf93fa8704b421598bc312e848b65fc54a515eb9f23",
+    "5965ab0a9a9bd76c0948525193f53511fb75427c74d60e3359d2742eb0e7a76f",
+    "bb70bb1d1af71c167e46b9cd93f9fd7bfa257c9ab76930abe4735d8c973a5070",
+    "a85be95f0a1b34276f86051e8c422f43f8965a270f3df83f5af708df80fde06a",
+    "fa1d71417705bae7ab383dccba2c1650fd20c4d5467c2f6d1515a87f5a624cd0",
+    "02d84a104eae390f874766ea05875d9d953eda8645115c0c18b9ded2b09b1c98",
+    "93aa2c281e3696e283db7cccaff42d55ee0382e9e01d1013ecf990be0e4570f1",
+    "6ffc1cedc37b3ba1aa49cdf8810636661882ab592b4737b9c95919af383194d9"
+   ]
+  },
+  {
+   "kind": "covenant",
+   "machine": "a^k b^k c^k",
+   "input": "aabbc",
+   "k": 2,
+   "code_bytes": 2977,
+   "transactions": 7,
+   "final_state": "R",
+   "txids": [
+    "44eb33fc81bb5eb9aaa8e210dcd278f63f9bf371c4a31a7804b1b09ad403ac38",
+    "fa31335a3b009fe013d666131438611564ff78a182b23d446d3e8fa523080e63",
+    "6d36961dc8c2535be66f891ec0a7cb83d5a22f82fa9538929659e5a4722b3b25",
+    "37d8bedb6f9d73870ab3fa92d6db7e16746a8e0e3efc7dc02e4b846d2476d226",
+    "7cba96bdc1796bb0ba9275149618f0314b226673b674f457777e72c35de3ad94",
+    "c6411a82d5b082be09e12c0b2ba1763217c0c897e774dadcc1ef0ca626da49b2",
+    "7d6341c0c93d6bea602c648b6a30da5c0868a0819cbbd27bebd9130a7aafd4dd"
+   ]
+  },
+  {
+   "kind": "covenant",
+   "machine": "binary counter",
+   "k": 4,
+   "code_bytes": 2309,
+   "transactions": 60,
+   "txids": [
+    "842f397854af8f9f20e0b984deff8f2b88b1613bffcdef5c860f412abf7629b1",
+    "3aebe15c43f5aacd6a7f23de894cb53880610d8c33ca03de13fb0daa3626f9d3",
+    "b4d9d79b44a8e51c1ada197dbd0ce220bf7c6564f02b2345b1c54bb9c7bbacd0",
+    "9005b2c5bcfb4b7c49f78c6f6783fb29efe65951da65685976bbd91e998d9132",
+    "8d75832e9015b0dee203f461f6e8e965081d3a6fe1d8605fbe87538baf623c95",
+    "21bd6234b60d01c43fdb5bf0f481b20bfe5cc2a931af3cb365352ce23c912fa1",
+    "59c32d759b863667bd6fcc2ec3fe259148e6be1d217eaf0bcfc98005849f3934",
+    "29cec84e5243aa4c524d9318ee41cb57d020a40aaff38a2287d29de8638aa6fe",
+    "c44b49e1cb0b07270e9a68c9e9473fe2011b10e8c3a02a17be4750bda0d74ea4",
+    "f1bcc434702a22b3acbf5a9f5bdc6e9a0a46dd64d5f1c65f99c36c76a97efcea",
+    "7322f87e243583cf255bbdbfe380445de8bda993c93b75dfb21e049c82da893e",
+    "486a805f2d777800f006f1d3e1444752c8797ab520e3d796e931320dc1704a14",
+    "574eb88ab4856b936c0976db866d19a4718d6b1659b97fa162c3b3c156ff9503",
+    "d956cbb41fc3e5f19b8acc5b4267307dc83e7d3f7096039b5aa408aef1ef28bd",
+    "7306286924e97a376f7b7685b0ba0b57b6825b68f763fcb357225528d6b76b81",
+    "515ea0bff7c19f41c4331f305bf9622a6c0967eeaee4fcfd4674e94eade279b1",
+    "4b2735354d49ab07bce7a23a16c7c76116e4ba53ecab93a0bd36b6b6d87f1ee4",
+    "1269c9259e14691a6a1dcb958d1640557c6aa6a2eec4e5cbc1f9ffa3e659d357",
+    "7a6e3b1956df66d18193d315520affe93b08311e59996b831fd79823dde6889b",
+    "731c910fdc618f53c0401baf9e9b8bbfc112341a5dd928165286a3dfb9b54a8b",
+    "c70549819e33eec52f2f1617da26987833158c6fb670812c2ab79486ce24620c",
+    "970ac57cc2afc69f9b93c72132c060b8406b43605df1075ea0d0244d4f8f4709",
+    "f2eef87c5b8efac9bd6c9cb9fd943f80a6ee5ae1ce58aad9d371c2472a3fb256",
+    "0fae32089e9251359b7d51a812031ef88ddeccf52a20b1f02749a842a62511c6",
+    "53eb0963a76ce2c2d6e741cb1c212790598dbf84a1358af4c099e1e12ca87816",
+    "c941653ac55c48c2c782c3d725ce837b2f30659f8dd97fc02a41064126b2c563",
+    "a8ffd76260d1fe88005bbf9f91bc160fc57eab23745357b98bd853860c6b0429",
+    "dcea109674bc6186573ab822024e095b5b8bd41fdea098fc4834d896af7f7371",
+    "7b8ddfaeb97633657aaeb97f7254c922e2661e078b312221581d406713108932",
+    "7d0b7d7fa18be56a0817ccbfd3e8c9d4a280959039215ef26478fdb5d5eaff34",
+    "3d21a51d10ca30edb08c6abc0a18bdc285a8dc396beff0a2a227b3704694af84",
+    "88b610103b54bbcf6e9d6e28304879a741d2148f063c30208753d174b389cc02",
+    "7421e71ac9373c1ccf9f415f392e189a2ac6ed0d3549c7913eadf8974541af69",
+    "86f42fa3bfc3fd6007ebbdb8d3f1a656640a27960c3465cf053cd67578d3f084",
+    "c6ca1570500780c85f19e2b3a011e8ce36fa4188c46542e2ee0706ce9d2ef5fa",
+    "2eea0782e999b3934c10e5b82ae4580b201edeae52c78b676dfca85414ef6644",
+    "434f89494364306c081ca81ede1305f6c3c0953c08c64e09323e78db224a3731",
+    "1535f395f52264550c9c8305ee080410b940517d4527bf73696dde63af98231f",
+    "250272aef61a114b32c1a3bc68a865d311137d3555c1fa0edb701bdd46c69d5d",
+    "7280650f69abf0d961847710b83358b1c2a8f3466577d7e591001beff6657db2",
+    "69096899e75c638c16e71714e450d569d189ad2e3efc7323a31b56373ff2c235",
+    "d34b5b3419149877aecbe697cdd4dd7954a047e8e506799dc54f28205df5f87b",
+    "acaa8fbc7e82303568d1f9462050428877574a6be828fc25648780206a3cf8b4",
+    "f5dadbb5173772e587e566e33b4414001f6db208b266a49bddcdb40e43a3a0e9",
+    "7b6a8aee2aa9837ace662be57be4756272143620830651a228d91cd1a88eabce",
+    "19f2c1eee38aee384200c62cc7621331fc4a95e4a9c354f9e78a6cc2aeea1ffa",
+    "e479f89ea144e5d0a374c5ce51cbe5b41cfa1a556d0cab2cf1aeaee65b9b7732",
+    "d6108b1b725edeafd5614e82d2388409c68a64e7526a6cb3ac1540d658726de7",
+    "e80ff9a72b52aca1ff8ea31c84b46c25865c35ac6afe598129e25f8b37ef9659",
+    "153b0331fdd1a7442d23fd9bcd7d61eb75d729dbdfe09c5f254753710018e19a",
+    "1afdc17d4a9b1f2aa2c6e6f07b3455a89b201d25e0eb8360500bf1af5c87fec0",
+    "272ab41852fb43e1c517fb12f8ee7a4a5c41a7a024430099795897aa6782c128",
+    "b90cfe700746853c09e0800e5d24d03899f87fad00cccb297c34f3f102a427d0",
+    "c6b313fe884c17de971c9358a7f12c63b72e3b4d9d40615d8b8adbeff6e815b4",
+    "40a340fd16687a718515062d31cd98065f982cb3ad4baf2d7bc7c478a52769d4",
+    "96461c484ac1f04401cbb30650c75b943c7613da3d7548276052911f4728643c",
+    "5e64cff66ad86ddce73817f6803a092c46d8157646f718953f0adbe7f64f8558",
+    "a1eb21ee9d08e53983020d407f625d7fb4e7daf76e2ab70629ef95ca6b2cfb50",
+    "a91190f8db14526de175988329b1bbfdc2fc1b5cbe750fb052d189b0c9c14e5f",
+    "d7c76bf2de36645bb20dd184efbadc13981d4711712befc145700135384807d4"
+   ]
+  }
+ ],
+ "files": {
+  "chronicle_v01.py": "f02934cbab75a4aab2c9b9ceb77a850416c0e9e8ec59d7938c16fca7bc5103a4",
+  "chronicle_v02.py": "ba68f74d653a708d2e3e669520a6f6795ae2defa2a74374db2eeda8e79cda503",
+  "constructions_v01.py": "093a6a7b79f5f6ef5b01a3ee76ca759827143d9c07fb072938ca448efb19db4a",
+  "covenant_v01.py": "12d21e0586330239df4d57cc1f85970a33f96c6b8be1553cbca291968c0e9f4a",
+  "covenant_v02.py": "4a7770a15120bdf16585ea5b404520ef8b871b048b79a757621295c708d32230",
+  "regtest_runs_v01.py": "7fcfc7364139cb22523dde8fec2083c28edf43014fd2c4682022174e6856f842",
+  "regtest_runs_v02.py": "045a91badcf212f52223fdcfba71f0c976d50db0556176dd9df531a1f34c5ecd",
+  "rpc_v01.py": "c4d61f5775bbe9c212c9d5c361a5fed2fc99575a0fec1e8719f2f78ab8a4474f",
+  "script015_v01.py": "f2f5d0484d2c072dbc14ba8aa900ba5af80f85af461a78ba3cf2b9ab15896d1f",
+  "script015_v02.py": "f70a2d45a42a0364e31fdadaaf7f8efee91bb0388e7331af0f7f6d7b61f9338d",
+  "secp256k1_v01.py": "1daa579d4282754855fbd58a540ff8aa2cf31e5113749970b2bb48256e6ee911",
+  "tx015_v01.py": "1c9f085fa312289106ef00a8c73257c72e6a85b5045bf5e767fbe5d374cc544d"
+ },
+ "time_utc": "2026-11-03T09:59:16Z",
+ "failures": 0
+}

@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "Turing machines on a BSV node: the 0.1.5 Script constructions validated and mined on bitcoin-sv"
-version: 1.0.1
-date-released: 2026-11-02
+version: 1.1.0
+date-released: 2026-11-03
 license: MIT
 repository-code: "https://github.com/prof-faustus/bsv-turing-proofs"
 authors:

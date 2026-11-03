@@ -1,0 +1,45 @@
+PASS model: Chronicle-dialect covenant (hash type 0x61, guarded reversal, version 2) carries a^k b^k c^k on aabbcc to acceptance | 12 transactions
+PASS translation changes only OP_SUBSTR/OP_LEFT/OP_RIGHT and preserves every push | 2346 operations, 139 remapped
+PASS node is bitcoin-sv 1.2.3 on regtest | /Bitcoin SV:1.2.3/
+PASS node refuses a^k b^k c^k n=6 on a non-member | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines a^k b^k c^k n=6 on a member | script 8594 bytes, T=23, spend 04bed941aa83f57c8d2fed3ae9104d979f02841b078120609f92bbf98b07c550
+PASS node refuses a^k b^k c^k n=9 on a non-member | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines a^k b^k c^k n=9 on a member | script 17179 bytes, T=46, spend 34f3c79a7feed41923b4583f2ee1cfdcf20448b6cae3b9b7da253ed524f21545
+PASS node accepts and mines 0^(2^k) n=64 on a member | script 159234 bytes, T=833, spend 0d63679c128b561c599584408bae6324972a29e1ca966055466b71f6d16a2efb
+PASS node refuses 0^(2^k) n=48 on a non-member | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node refuses A(2,3) claimed as 10 | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines A(2,3)=9 (44 iterations) | script 1284 bytes, spend 7c680f1112b6be9e845800a5b63fb9a4601cc6c143412d40c9836d7c5d3f3a06
+PASS node refuses A(3,3) claimed as 62 | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines A(3,3)=61 (2432 iterations) | script 70536 bytes, spend 65b6a337deae2df05e68b60d384891cf91219c93897f46974b9360cb589abea0
+PASS node refuses A(3,4) claimed as 126 | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS node accepts and mines A(3,4)=125 (10307 iterations) | script 298911 bytes, spend 28d57bf37c6ba543495904c6d4c86b37567c2ec87e0c6ca9077d08d795c7d6b3
+PASS covenant a^k b^k c^k on aabbcc: node refuses a successor with the wrong machine state | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses a successor with one tape cell altered | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses a second output | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses substituted code | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses a misstated transaction field | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses payout before acceptance | 16: mandatory-script-verify-flag-failed (Operation not valid with the current stack size)
+PASS covenant a^k b^k c^k on aabbcc: node refuses a forged spend with a second output | 1 cuts, none with serialised widths; 16: mandatory-script-verify-flag-failed (Script failed an OP_EQUALVERIFY operation)
+PASS covenant a^k b^k c^k on aabbcc: node refuses a forged spend with substituted code | 351 cuts, none with serialised widths; 16: mandatory-script-verify-flag-failed (Script failed an OP_EQUALVERIFY operation)
+PASS covenant on aabbcc: 12 consecutive transactions accepted and mined by the node | 6ffc1cedc37b3ba1aa49cdf8810636661882ab592b4737b9c95919af383194d9
+PASS covenant on aabbcc: final on-chain state equals the reference machine's | A
+PASS covenant on aabbcc: node refuses payout signed by another key | 16: mandatory-script-verify-flag-failed (Script evaluated without error but finished with a false/empty top stack element)
+PASS covenant on aabbcc: beneficiary paid after acceptance, mined | e675abd6308b7deb65d01ee1787a8ef6815c357992b79ef2c15d4fea94b043ac
+PASS covenant on aabbc: 7 consecutive transactions accepted and mined by the node | 7d6341c0c93d6bea602c648b6a30da5c0868a0819cbbd27bebd9130a7aafd4dd
+PASS covenant on aabbc: final on-chain state equals the reference machine's | R
+PASS covenant on aabbc: node refuses payout after rejection | 16: mandatory-script-verify-flag-failed (Operation not valid with the current stack size)
+PASS covenant_v01 (no field-width test): node accepts and mines a forged spend with a second output | 2 cuts; a999cee2e033af2b5f13e7e1cd51d8c3e3f521fe5e88d4188a0d3a4c257b1c5f
+PASS covenant_v01 (no field-width test): node accepts and mines a forged spend with substituted code | 351 cuts; 5a91a2dd20cbb9cb9de27a8ca57eb56250968814302f75a326d56a591a81fa68
+PASS covenant_v01: the hijacked successor is spent with an empty unlocking script | 5909227afa04706c1ceda82422641bdba4e17786bc9fb4d0a56927ab0ec1ac4d
+PASS covenant binary counter: node refuses a successor with the wrong machine state | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses a successor with one tape cell altered | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses a second output | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses substituted code | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses a misstated transaction field | 16: mandatory-script-verify-flag-failed (Script failed an OP_CHECKSIGVERIFY operation)
+PASS covenant binary counter: node refuses payout before acceptance | 16: mandatory-script-verify-flag-failed (Operation not valid with the current stack size)
+PASS covenant binary counter: node refuses a forged spend with a second output | 2 cuts, none with serialised widths; 16: mandatory-script-verify-flag-failed (Script failed an OP_EQUALVERIFY operation)
+PASS covenant binary counter: node refuses a forged spend with substituted code | 204 cuts, none with serialised widths; 16: mandatory-script-verify-flag-failed (Script failed an OP_EQUALVERIFY operation)
+PASS counter covenant: 60 consecutive transactions accepted and mined (240 machine steps) | d7c76bf2de36645bb20dd184efbadc13981d4711712befc145700135384807d4
+PASS counter covenant: on-chain state equals the reference machine's
+
+failures: 0
